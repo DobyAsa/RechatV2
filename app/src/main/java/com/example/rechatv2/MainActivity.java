@@ -1,9 +1,7 @@
 package com.example.rechatv2;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         mDiscoverButton = findViewById(R.id.DiscoverButton);
         mAccountButton = findViewById(R.id.MyAccountButton);
         mNavController = ((NavHostFragment) Objects.requireNonNull(getSupportFragmentManager().
-                            findFragmentById(R.id.fragmentContainer))).getNavController();
+                findFragmentById(R.id.fragmentContainer))).getNavController();
 
         mChatButton.setOnClickListener(new View.OnClickListener() {
             @Override

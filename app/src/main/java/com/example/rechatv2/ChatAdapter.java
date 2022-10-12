@@ -7,35 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder> {
     private final Person[] localDataset;
-    public static class ChatViewHolder extends RecyclerView.ViewHolder {
-        private final ImageView mChatAvatar;
-        private final TextView mChatName;
-        private final TextView mLastChatTime;
-
-        public ChatViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mChatAvatar = itemView.findViewById(R.id.ChatAvatar);
-            mChatName = itemView.findViewById(R.id.ChatName);
-            mLastChatTime = itemView.findViewById(R.id.LastChatTime);
-        }
-
-        public ImageView getChatAvatar() {
-            return mChatAvatar;
-        }
-
-        public TextView getChatName() {
-            return mChatName;
-        }
-
-        public TextView getLastChatTime() {
-            return mLastChatTime;
-        }
-    }
 
     public ChatAdapter(Person[] dataset) {
         localDataset = dataset;
@@ -59,6 +34,31 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
     @Override
     public int getItemCount() {
         return localDataset.length;
+    }
+
+    public static class ChatViewHolder extends RecyclerView.ViewHolder {
+        private final ImageView mChatAvatar;
+        private final TextView mChatName;
+        private final TextView mLastChatTime;
+
+        public ChatViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mChatAvatar = itemView.findViewById(R.id.ChatAvatar);
+            mChatName = itemView.findViewById(R.id.ChatName);
+            mLastChatTime = itemView.findViewById(R.id.LastChatTime);
+        }
+
+        public ImageView getChatAvatar() {
+            return mChatAvatar;
+        }
+
+        public TextView getChatName() {
+            return mChatName;
+        }
+
+        public TextView getLastChatTime() {
+            return mLastChatTime;
+        }
     }
 
 }
