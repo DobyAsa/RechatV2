@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:id="@+id/directline"
+        android:id="@+id/ActionBar"
         android:layout_width="413dp"
         android:layout_height="70dp"
         android:background="#F1F1F1"
@@ -18,44 +18,49 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@+id/chat"
+            android:id="@+id/ChatButton"
             android:layout_width="99dp"
             android:layout_height="match_parent"
             android:layout_weight="@integer/material_motion_duration_long_1"
+            android:background="#F1F1F1"
             app:srcCompat="@drawable/rechat" />
 
         <ImageView
-            android:id="@+id/friends"
+            android:id="@+id/FriendsButton"
             android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_weight="@integer/material_motion_duration_long_1"
+            android:background="#F1F1F1"
             app:srcCompat="@drawable/addressbook" />
 
         <ImageView
-            android:id="@+id/discover"
+            android:id="@+id/DiscoverButton"
             android:layout_width="97dp"
             android:layout_height="match_parent"
             android:layout_weight="@integer/material_motion_duration_long_1"
+            android:background="#F1F1F1"
             app:srcCompat="@drawable/safari" />
 
         <ImageView
-            android:id="@+id/myAccount"
+            android:id="@+id/MyAccountButton"
             android:layout_width="98dp"
             android:layout_height="match_parent"
             android:layout_weight="@integer/material_motion_duration_long_1"
-            app:srcCompat="@drawable/person" />
+            android:background="#F1F1F1"
+            app:srcCompat="@drawable/account" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="com.example.rechatv2.chat"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/directline"
+        app:layout_constraintBottom_toTopOf="@id/ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_rechat">
 
-    </androidx.fragment.app.FragmentContainerView>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
