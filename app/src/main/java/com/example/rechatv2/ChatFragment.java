@@ -32,7 +32,7 @@ public class ChatFragment extends Fragment {
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.ChatRecycleView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mChatAdapter = new ChatAdapter(MyFriends);
+        mChatAdapter = new ChatAdapter(getContext(), MyFriends);
         mRecyclerView.setAdapter(mChatAdapter);
         return rootView;
     }

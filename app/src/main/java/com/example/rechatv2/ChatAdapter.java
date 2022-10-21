@@ -1,5 +1,7 @@
 package com.example.rechatv2;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder> {
     private final Person[] localDataset;
+    private Context context;
 
-    public ChatAdapter(Person[] dataset) {
+    public ChatAdapter(Context c, Person[] dataset) {
+        context = c;
         localDataset = dataset;
     }
 
@@ -29,6 +33,13 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
         holder.getChatAvatar().setImageDrawable(localDataset[0].getAvatar());
         holder.getChatName().setText(localDataset[0].getName());
         holder.getLastChatTime().setText(localDataset[0].getLastChatTime());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ItemAcitivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

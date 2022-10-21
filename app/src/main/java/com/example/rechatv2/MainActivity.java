@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mNavController.navigate(R.id.chatFragment);
-                mChatButton.setBackgroundColor(0xAAAAAA);
-                mChatButton.invalidate();
             }
         });
 
@@ -41,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mNavController.navigate(R.id.friendsFragment);
-                mFriendsButton.setBackgroundColor(0xAAAAAA);
-                mFriendsButton.invalidate();
             }
         });
 
@@ -50,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mNavController.navigate(R.id.discoverFragment);
-                mDiscoverButton.setBackgroundColor(0xAAAAAA);
             }
         });
 
@@ -58,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mNavController.navigate(R.id.accountFragment);
-                mAccountButton.setBackgroundColor(0xAAAAAA);
             }
         });
 
